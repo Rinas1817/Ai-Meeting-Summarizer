@@ -1,117 +1,95 @@
-# Ai-Meeting-Summarizer
+# Universal AI Meeting Summarizer
 
-Universal AI Meeting Summarizer
-A powerful, multilingual AI assistant that automatically transcribes, identifies speakers, and generates intelligent summaries for meetings from any audio source. This prototype is designed to be a platform-agnostic solution, working with audio from Google Meet, Zoom, Microsoft Teams, and more.
+![Python Version](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![Framework](https://img.shields.io/badge/Framework-Streamlit-red.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-Developed in Coimbatore, India, this project showcases a complete, end-to-end AI workflow from raw audio to actionable business intelligence.
+A powerful, multilingual AI assistant that automatically transcribes, identifies speakers, and generates intelligent summaries for meetings from any audio source. This prototype is a platform-agnostic solution, working with audio from Google Meet, Zoom, Microsoft Teams, and more.
 
-✨ Features
-This application is a feature-rich platform designed to automate the entire post-meeting workflow.
+Developed in Salem, India, this project showcases a complete, end-to-end AI workflow from raw audio to actionable business intelligence.
 
-Core Intelligence Engine
-High-Accuracy Multilingual Transcription: Powered by OpenAI's large-v3 Whisper model for state-of-the-art accuracy.
+---
 
-Multi-Language Support: Full support for English, Tamil, Hindi, Malayalam, and Kannada.
+## ✨ Application Preview
 
-Automatic Language Detection: Prevents inaccurate transcriptions by verifying that the audio language matches the user's selection.
+The application features a clean, intuitive interface with a sidebar for easy navigation between different modes of operation.
 
-Intelligent Speaker Recognition: Uses pyannote.audio for voiceprint analysis. It identifies pre-enrolled speakers and uses a similarity threshold to assign generic labels (Speaker 1, Speaker 2) to unknown voices, avoiding misidentification.
+| Meeting Results & Analytics | Speaker Enrollment | Calendar Integration |
+| :---: | :---: | :---: |
+| ![Meeting Results](assets/shows the title,summary,etc..png) | ![Speaker Enrollment](assets/shows the Enroll a New Speaker.png) | ![Calendar View](assets/shows the Upcoming Meeting.png) |
 
-AI-Powered Summarization: Leverages the Google Gemini API to automatically generate:
+---
 
-A concise meeting summary.
+## 🚀 Key Features
 
-A list of key decisions.
+### **Intelligent Meeting Analysis**
+The core of the application is its ability to process meeting audio and deliver structured insights. After analysis, it provides a comprehensive breakdown including a summary, action items, key decisions, and a full conversational transcript.
 
-A checklist of all identified action items.
+![Talk-Time Analytics Chart](assets/show the talk-time chart.png)
+*The system automatically generates a talk-time distribution chart for clear analytics on participant contribution.*
 
-The main topics discussed.
+### **Multilingual Transcription & Speaker Recognition**
+* **High-Accuracy Transcription:** Powered by OpenAI's `medium` Whisper model for a great balance of speed and accuracy on a free GPU.
+* **Multi-Language Support:** Full support for **English, Tamil, Hindi, Malayalam, and Kannada**. The system also includes a language detection feature to prevent mismatches.
+* **Speaker Enrollment:** Users can enroll speakers by providing a short voice sample, allowing the AI to identify them by name in future meetings.
 
-Analytics & Integrations
-Talk-Time Analytics: Generates an interactive pie chart showing the percentage of time each participant spoke.
+### **Calendar Integration**
+The assistant can securely connect to a user's Google Calendar to display a dashboard of upcoming meetings, creating a single hub for their schedule.
 
-Google Calendar Integration: A dashboard that securely connects to your Google Calendar to display a list of your upcoming meetings with video links.
+---
 
-User & System Management
-Full Speaker Management: An intuitive UI to enroll new speaker voiceprints and view or delete existing ones.
+## 🛠️ Getting Started: A Step-by-Step Guide
 
-Conversational Transcript: Displays the final transcript in a clean, script-like format for easy reading.
+This project is designed to be run in a Google Colab environment. Follow these steps carefully to get it running.
 
-GPU Accelerated: The application is designed to leverage GPU hardware for a 10x+ speed improvement in processing.
+### **Step 1: Prerequisites (One-Time Setup)**
 
-🛠️ Technology Stack
-AI Models: OpenAI Whisper large-v3, Pyannote.audio, Google Gemini Pro
-
-Application Framework: Python & Streamlit
-
-Data & Analytics: Pandas, Plotly
-
-Authentication & APIs: Google OAuth 2.0, Google Calendar API
-
-Development Environment: Google Colab with T4 GPU Acceleration
-
-🚀 How to Run This Project
-This project is designed to be run in a Google Colab environment. Follow these steps carefully to get started.
-
-1. Prerequisites (One-Time Setup)
 Before running the notebook, you must complete the following setup:
 
-Google Drive: Create a main folder named AI_Summarizer_Project in your Google Drive. Inside it, create four empty subfolders: models, pip_cache, hf_cache, and voiceprints.
+1.  **Create Google Drive Folders:**
+    * In your Google Drive, create a main folder named `AI_Summarizer_Project`.
+    * Inside it, create four empty subfolders: `models`, `pip_cache`, `hf_cache`, and `voiceprints`.
+    * Upload your `credentials.json` file (obtained from Google Cloud) into the main `AI_Summarizer_Project` folder.
+    * ![Drive Setup](assets/shows your Google Drive folder structure.png)
 
-Google Cloud Project:
+2.  **Configure Google Cloud Project:**
+    * Create a project in the [Google Cloud Console](https://console.cloud.google.com/).
+    * Enable the **Google Calendar API**.
+    * Configure the **OAuth Consent Screen** (as an "External" app) and add your email as a test user.
+    * Create **OAuth 2.0 Credentials** for a **`Desktop app`**.
+    * Download the JSON file and rename it to `credentials.json` before uploading it to Google Drive.
 
-Create a project in the Google Cloud Console.
+3.  **Get Your API Keys & Tokens:**
+    * **Hugging Face Token:** Create a `read` token from [hf.co/settings/tokens](https://hf.co/settings/tokens). You must also accept the user conditions on the model pages for `pyannote/speaker-diarization-3.1`, `pyannote/segmentation-3.0`, and `pyannote/embedding`.
+    * **Google Gemini API Key:** Get your key from [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey).
+    * **Ngrok Authtoken:** Get your token from your [ngrok Dashboard](https://dashboard.ngrok.com/get-started/your-authtoken).
 
-Enable the Google Calendar API.
+### **Step 2: Launch the Application in Colab**
 
-Configure the OAuth Consent Screen (as an "External" app) and add your email as a test user.
+1.  **Open the Notebook:** Open the `AI_Summarizer_Project.ipynb` notebook in Google Colab.
 
-Create OAuth 2.0 Credentials for a Desktop app.
+2.  **Set Up Colab Secrets:** In the Colab sidebar (🔑 icon), add your three secrets with these exact names: `HF_TOKEN`, `GEMINI_API_KEY`, and `NGROK_AUTH_TOKEN`. Ensure the toggle next to each is enabled.
 
-Download the JSON file, rename it to credentials.json, and upload it to your AI_Summarizer_Project folder on Google Drive.
+3.  **Enable GPU:** Go to **`Runtime > Change runtime type`** and select **`T4 GPU`** as the hardware accelerator.
 
-API Keys & Tokens: You need to get three secret keys:
+4.  **Run the Cells in Order:**
+    * **Run the Master Setup Cell:** Execute the first large code cell. This will install all dependencies and download the AI models to your Drive cache.
+    * **Run the Application Cell:** Execute the second large code cell (the one starting with `%%writefile app.py`).
+    * **Run the Launcher Cell:** Execute the final code cell.
 
-Hugging Face Token: Create a read token from hf.co/settings/tokens. You must also accept the user conditions on the model pages for pyannote/speaker-diarization-3.1, pyannote/segmentation-3.0, and pyannote/embedding.
+5.  **Open the App:** A public `ngrok` URL will be printed. Click this link to open your AI Meeting Summarizer in a new browser tab and start using it!
 
-Google Gemini API Key: Get your key from aistudio.google.com/app/apikey.
+---
 
-Ngrok Authtoken: Get your token from your ngrok Dashboard.
+## 📜 License
 
-2. Running the Notebook
-Open in Colab: Open the AI_Summarizer_Project.ipynb notebook in Google Colab.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-Set Up Secrets: In the Colab sidebar, click the key icon (🔑) and add your three secrets with these exact names:
+---
 
-HF_TOKEN
+## 📧 Contact
 
-GEMINI_API_KEY
-
-NGROK_AUTH_TOKEN
-
-Enable GPU: Go to Runtime > Change runtime type and select T4 GPU as the hardware accelerator.
-
-Run the Master Setup Cell: Execute the first large code cell. The first time you run this, it will take several minutes to download all the models and dependencies to your Google Drive cache. Subsequent runs will be much faster.
-
-Run the Application Cell: Execute the second large code cell (the one starting with %%writefile app.py). This will create the application file.
-
-Run the Launcher Cell: Execute the final code cell. This will start the application and print a public ngrok URL.
-
-Click the URL to open your AI Meeting Summarizer in a new browser tab.
-
-3. How to Use the Application
-Enroll Speakers: Go to the "Enroll New Speaker" tab to upload a short voice sample for each person you want the app to recognize.
-
-Manage Speakers: Go to the "Manage Speakers" tab to view or delete enrolled voiceprints.
-
-Process a Meeting: Go to the "Process Meeting" tab, select the language spoken, upload your audio file, and click "Analyze Meeting."
-
-View Calendar: Go to the "Calendar" tab and follow the on-screen instructions to authorize access to your Google Calendar and view your upcoming events.
-
-📜 License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-📧 Contact
-Mohamed Rilvan Rinas Z
-Email: [rilvanrinas@gmail.com]
-Fiverr: [https://www.fiverr.com/mohamed_rinas_1/buying?source=avatar_menu_profile]
+Rinas
+* **Email:** [Your Email Here]
+* **Fiverr:** [Your Fiverr Profile URL Here]
+* **GitHub:** [Your GitHub Profile URL Here]
