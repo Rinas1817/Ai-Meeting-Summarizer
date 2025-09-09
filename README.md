@@ -16,7 +16,7 @@ The application features a clean, intuitive interface with a sidebar for easy na
 
 | Meeting Results & Analytics | Speaker Enrollment | Calendar Integration |
 | :---: | :---: | :---: |
-| ![Meeting Results](assets/shows the title,summary,etc..png) | ![Speaker Enrollment](assets/shows the Enroll a New Speaker.png) | ![Calendar View](assets/shows the Upcoming Meeting.png) |
+| ![Meeting Results](assets/results_screen.png) | ![Speaker Enrollment](assets/enroll_screen.png) | ![Calendar View](assets/calendar_screen.png) |
 
 ---
 
@@ -25,7 +25,7 @@ The application features a clean, intuitive interface with a sidebar for easy na
 ### **Intelligent Meeting Analysis**
 The core of the application is its ability to process meeting audio and deliver structured insights. After analysis, it provides a comprehensive breakdown including a summary, action items, key decisions, and a full conversational transcript.
 
-![Talk-Time Analytics Chart](assets/show the talk-time chart.png)
+![Talk-Time Analytics Chart](assets/analytics_screen.png)
 *The system automatically generates a talk-time distribution chart for clear analytics on participant contribution.*
 
 ### **Multilingual Transcription & Speaker Recognition**
@@ -50,7 +50,7 @@ Before running the notebook, you must complete the following setup:
     * In your Google Drive, create a main folder named `AI_Summarizer_Project`.
     * Inside it, create four empty subfolders: `models`, `pip_cache`, `hf_cache`, and `voiceprints`.
     * Upload your `credentials.json` file (obtained from Google Cloud) into the main `AI_Summarizer_Project` folder.
-    * ![Drive Setup](assets/shows your Google Drive folder structure.png)
+    * ![Drive Setup](assets/drive_setup.png)
 
 2.  **Configure Google Cloud Project:**
     * Create a project in the [Google Cloud Console](https://console.cloud.google.com/).
@@ -87,9 +87,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ---
 
-## 📧 Contact
+ Contact
 
-Rinas
-* **Email:** [Your Email Here]
-* **Fiverr:** [Your Fiverr Profile URL Here]
-* **GitHub:** [Your GitHub Profile URL Here]
+Mohamed Rilvan Rinas
+Email: [rilvanrinas@gmail.com]
