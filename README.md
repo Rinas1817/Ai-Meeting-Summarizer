@@ -113,8 +113,5 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 📧 Contact
 Mohamed Rilvan Rinas Z
-rilvanrinas@gmail.com
-
 Email: [rilvanrinas@gmail.com]
-
 Fiverr: [https://www.fiverr.com/mohamed_rinas_1/buying?source=avatar_menu_profile]
