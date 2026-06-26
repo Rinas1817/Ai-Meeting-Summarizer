@@ -1,10 +1,12 @@
 # Universal AI Meeting Summarizer
 
+
 ![Python Version](https://img.shields.io/badge/Python-3.10+-blue.svg)
 ![Framework](https://img.shields.io/badge/Framework-Streamlit-red.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 A powerful, multilingual AI assistant that automatically transcribes, identifies speakers, and generates intelligent summaries for meetings from any audio source. This prototype is a platform-agnostic solution, working with audio from Google Meet, Zoom, Microsoft Teams, and more.
+project Demo : https://huggingface.co/spaces/mohamed786/ai-meeting-summarizer
 
 Developed in Salem, India, this project showcases a complete, end-to-end AI workflow from raw audio to actionable business intelligence.
 
